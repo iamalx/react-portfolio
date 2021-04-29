@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 // import UserSchema from '../validators/add-user';
+import '../App.css';
 import * as yup from 'yup';
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
@@ -9,32 +10,22 @@ import TextField from './text-field';
 
 
  const schema = yup.object({
-        firstName: yup.string().required(),
-        lastName: yup.string().required(),
-        email: yup.string().required().email(),
-        notes: yup.string().required(),
+        firstName: yup.string().required('First name required'),
+        lastName: yup.string().required('Last name required'),
+        Email: yup.string().email().required(),
+        Note: yup.string().required(),
 });
 
 
 const AddUserForm = () => {
 
-    const [val, setVal] = useState('')    
+    const [val, setVal] = useState('')  
 
     const saveUser = (data) => {
         console.log(val)
         console.log('1', data)
         setVal(data)
-        console.log(val)
-        
-    } 
-    let  Submit= 'not'
-
-    const onChange = (val) => {
-         console.log(val)
-        if(val.isValid && val.dirty) {
-            Submit='submit'
-            console.log(val.isValid)
-        } else Submit='not'
+        console.log(val)  
     } 
 
     return (
@@ -50,18 +41,17 @@ const AddUserForm = () => {
         >
             {formik => (
                 <div>
-                   {onChange(formik)}
-                    <Form>
-                        <TextField label='First Name' name='firstName' type='text'></TextField>
-                        <TextField label='Last Name' name='lastName' type='text'></TextField>
-                        <TextField label='Email' name='email' type='email'></TextField>
-                        <TextField label='Notes' name='notes' type='textarea'></TextField>
-                        <button type='submit'>{Submit}</button> 
+                    <Form className='form-container'>
+                        <TextField label='First Name' isdirty={formik.dirty.toString()} isfocus='true' name='firstName' type='text'></TextField>
+                        <TextField label='Last Name'  isdirty={formik.dirty.toString()} isfocus='false' name='lastName' type='text'></TextField>
+                        <TextField label='Email' isdirty={formik.dirty.toString()} isfocus='false' name='Email' type='email'></TextField>
+                        <TextField label='Notes' isdirty={formik.dirty.toString()} isfocus='false' name='Note' type='text'></TextField>
+                        <button className={formik.isValid & formik.dirty ? 'btn': 'btn-disabled'} 
+                            type='submit' 
+                            disabled={formik.isValid & formik.dirty ? false: true} >Submit</button> 
                     </Form>
                 </div>
                 )
-            
-            
             }            
         </Formik>
     );

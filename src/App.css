@@ -15,3 +15,25 @@
   flex-direction: column;
   max-width: 250px;
 }
+
+.btn {
+  background-color: rgb(39, 37, 37);
+  color: white; 
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn-disabled {
+  background-color:rgb(98, 98, 98);
+  color: rgb(162, 162, 162);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.error-msg {
+  border: 1px solid red;
+}
+
+.error-text {
+  color: red
+}
