@@ -7,35 +7,32 @@ const App = () => {
 
     const [ userList, setUserList ] = useState([])
 
-    const updUserList = (data) => {
-        // console.log(data)
-        if(userList.length >= 1) {
-            console.log('user: ', data.email)
+    const addUserList = (data) => {
 
+        if(userList.length >= 1) {
             const isIncluded = userList.filter(elem => elem.email === data.email)  
-            console.log(isIncluded)
+
             if (isIncluded.length !== 0) {
                 return
             } else {
-                let newUserList = [...userList, data]
-                console.log(newUserList)
+                const newUserList = [...userList, data]
                 setUserList(newUserList)
-                console.log('user2: ',userList)     
             }
-           
-        } else {
-            console.log('no user: ',userList)     
+        } else {  
             setUserList([data])
-            console.log('no user:2 ',userList)     
         }
-      
     }
 
+    const deleteUser = (email) => {
+
+        const updatedList = userList.filter(elem => elem.email !== email) 
+        setUserList(updatedList)
+    }
+    
     return (
-        <div className='App'>
-            <h1>Sign Up</h1>
-            <AddUserForm updUser={updUserList} />
-            <UserList userList={userList}/>
+        <div className='App error-bor' >
+            <AddUserForm updUser={addUserList} />
+            <UserList deleteUser={deleteUser} userList={userList} />
         </div>
     );
 }

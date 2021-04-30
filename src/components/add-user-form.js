@@ -28,6 +28,7 @@ const AddUserForm = ({ updUser }) => {
             updUser(data)
             // return state
         //   });
+        
     } 
 
     return (
@@ -39,10 +40,14 @@ const AddUserForm = ({ updUser }) => {
                 note: '',
             }}
             validationSchema={schema}
-            onSubmit={val => saveUser(val)}
+            onSubmit={(values, { resetForm }) => {
+                saveUser(values)
+                resetForm()
+            }}
         >
             {formik => (
-                <div>
+                <div className=' error-bor cl-width'>
+                    <h1>Sign Up</h1>
                     <Form className='form-container'>
                         <TextField label='First Name'
                             isdirty={formik.dirty.toString()} 

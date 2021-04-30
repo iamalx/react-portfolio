@@ -15,7 +15,7 @@ const TextField = ({ label, ...props }) => {
     })
 
     return (
-        <div className='form-container'>
+        <div className='form-container  error-bor'>
             <label htmlFor={field.name} >{label}</label>
             <input className={`${meta.touched && meta.error && 'error-msg'}`}
                 ref={textInput}
