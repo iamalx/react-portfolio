@@ -1,15 +1,9 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-// import UserSchema from '../validators/add-user';
 import '../App.css';
 import * as yup from 'yup';
-import React, { useState, useEffect } from 'react';
 import { Formik, Form } from 'formik';
 import TextField from './text-field';
 
-
-
- const schema = yup.object({
+const schema = yup.object({
         firstName: yup.string().required('First name required'),
         lastName: yup.string().required('Last name required'),
         email: yup.string().email().required('Email required'), 
@@ -18,19 +12,12 @@ import TextField from './text-field';
 
 
 const AddUserForm = ({ updUser }) => {
-    // console.log(updUserList)
-    // const [val, setVal] = useState({})  
 
-    const saveUser = async (data) => {
-        // setVal(data)
-        // setVal((state) => {
-            console.log('USERFORM')
-            updUser(data)
-            // return state
-        //   });
-        
+    const saveUser = (data) => {
+        updUser(data)
     } 
 
+    // parent component of input 
     return (
         <Formik
             initialValues = {{
@@ -46,8 +33,9 @@ const AddUserForm = ({ updUser }) => {
             }}
         >
             {formik => (
-                <div className=' error-bor cl-width'>
+                <div className='cl-width'>
                     <h1>Sign Up</h1>
+
                     <Form className='form-container'>
                         <TextField label='First Name'
                             isdirty={formik.dirty.toString()} 
@@ -79,6 +67,7 @@ const AddUserForm = ({ updUser }) => {
                             type='submit' 
                             disabled={formik.isValid & formik.dirty ? false: true}>
                         Submit</button> 
+
                     </Form>
                 </div>
                 )

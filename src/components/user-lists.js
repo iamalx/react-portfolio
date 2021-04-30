@@ -1,30 +1,26 @@
-import React, { useState, useEffect } from 'react';
+const UserList = ({ userList, deleteUser }) => {    
 
-const UserList = ({ userList, deleteUser }) => {
-    console.log('USERLIST', userList)
-    
-
+    // displays the lists of users
     return (
-        <div className='users-container cl-width error-bor'>
+        <div className='users-container cl-width'>
         <ul>
-            {userList.map((data,i) => (
+            {userList.map((data) => (
                 <div className='user-div' key={data.email}>
                     <span className='name error-bor' key={data.email}>{data.firstName + ' ' + data.lastName}
                         <button 
                             key={data.email}
                             className='btn-del'
-                            onClick={() => deleteUser(data.email)}>delete
+                            onClick={() => deleteUser(data.email)}
+                            >delete
                         </button>
                     </span>
-                    <span className='email error-bor' key={data.email}>{`(${data.email})`}</span>
+                    <span className='email' key={data.email}>{`(${data.email})`}</span>
                     <span className='note' key={data.note}>
                         <span className='note-label' key={data.email}>Note:
                         </span>
                         {data.note}
                     </span>
-                   
                 </div>
-                
             ))}
             </ul>
             
