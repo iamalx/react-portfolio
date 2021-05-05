@@ -2,6 +2,7 @@ import '../App.css';
 import * as yup from 'yup';
 import { Formik, Form } from 'formik';
 import TextField from './text-field';
+import { useEffect, useRef } from 'react';
 
 const schema = yup.object({
         firstName: yup.string().required('First name required'),
@@ -13,9 +14,16 @@ const schema = yup.object({
 
 const AddUserForm = ({ updUser }) => {
 
+    const inputRef = useRef(null)
+
     const saveUser = (data) => {
+        inputRef.current.focus()
         updUser(data)
     } 
+
+    useEffect(() => {
+        inputRef.current?.focus() 
+    }, [])
 
     // parent component of input 
     return (
@@ -39,26 +47,23 @@ const AddUserForm = ({ updUser }) => {
                     <Form className='form-container'>
                         <TextField label='First Name'
                             isdirty={formik.dirty.toString()} 
-                            isfocus='true'
                             name='firstName' 
                             type='text'
+                            ref={inputRef}
                         ></TextField>
                         <TextField label='Last Name' 
                             isdirty={formik.dirty.toString()}
-                            isfocus='false'
                             name='lastName'
                             type='text'
                         ></TextField>
                         <TextField label='Email'
                             isdirty={formik.dirty.toString()}
-                            isfocus='false'
                             name='email'
                             type='email'
                         ></TextField>
                         <TextField 
                             label='Note'
                             isdirty={formik.dirty.toString()}
-                            isfocus='false'
                             name='note'
                             type='text'
                         ></TextField>
