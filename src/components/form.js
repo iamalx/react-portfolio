@@ -17,12 +17,10 @@ const ContactForm = ({ updUser }) => {
     const inputRef = useRef(null)
 
     const saveUser = (data) => {
-        inputRef.current.focus()
         updUser(data)
     } 
 
     useEffect(() => {
-        inputRef.current?.focus() 
     }, [])
 
     // parent component of input 

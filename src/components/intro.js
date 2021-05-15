@@ -7,9 +7,9 @@ const Intro = () => {
 
     
     return (
-        <div className='error-bar viewport-hg' >
-           <h1 className='mt-5 '>Hello World!</h1>
-           <h2>I'm a Software Developer</h2>
+        <div className='error-bar viewport-hg vr-center ' >
+           <h1 className=''>Hello World!</h1>
+           <p>I'm an Avid Software Developer</p>
         </div>
     );
 }

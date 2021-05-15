@@ -13,6 +13,18 @@
   height: 100vh;
 }
 
+.vr-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hr-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .hhhhhh{
   border: 1px solid green;
 }
