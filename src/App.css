@@ -1,12 +1,20 @@
 .App {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
 .App-header {  
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
+}
+
+.viewport-hg {
+  height: 100vh;
+}
+
+.hhhhhh{
+  border: 1px solid green;
 }
 
 .form-container {

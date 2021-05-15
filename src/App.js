@@ -1,6 +1,19 @@
 import './App.css';
-import AddUserForm from './components/form';
-import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
+
+import AboutMe from './components/about-me';
+import Contact from './components/contact';
+import Intro from './components/intro';
+import Stack from './components/stack';
+import Portfolio from './components/portfolio';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+
+
 
 const App = () => {
 
@@ -8,8 +21,30 @@ const App = () => {
 
     
     return (
-        <div className='App' >
-            <AddUserForm />
+        <div className=''>
+            <Container>
+                <Row>
+                    <Col>
+                        <Intro />
+                    </Col>
+                    <Col>
+                        <Stack />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Portfolio />   
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <AboutMe />
+                    </Col>
+                    <Col> 
+                        <Contact />
+                    </Col>
+                </Row>
+            </Container>
            
         </div>
     );

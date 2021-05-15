@@ -5,14 +5,14 @@ import TextField from './input-field';
 import { useEffect, useRef } from 'react';
 
 const schema = yup.object({
-        firstName: yup.string().required('First name required'),
-        lastName: yup.string().required('Last name required'),
-        email: yup.string().email().required('Email required'), 
-        note: yup.string().required('Note required'),
+    firstName: yup.string().required('First name required'),
+    lastName: yup.string().required('Last name required'),
+    email: yup.string().email().required('Email required'), 
+    note: yup.string().required('Note required'),
 });
 
 
-const AddUserForm = ({ updUser }) => {
+const ContactForm = ({ updUser }) => {
 
     const inputRef = useRef(null)
 
@@ -82,4 +82,4 @@ const AddUserForm = ({ updUser }) => {
     );
 }
 
-export default AddUserForm
+export default ContactForm;
