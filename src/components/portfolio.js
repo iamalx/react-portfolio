@@ -1,6 +1,10 @@
 import '../App.css';
 import { useState } from 'react';
+
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const projects = [
     {
@@ -17,7 +21,23 @@ const projects = [
         title: 'My Portfolio ',
         text: 'Web app build with React',
         link: 'github.com/iamalx',
-    }
+    },
+    {
+        title: 'My Portfolio ',
+        text: 'Web app build with React',
+        link: 'github.com/iamalx',
+    },
+    {
+        title: 'My Portfolio ',
+        text: 'Web app build with React',
+        link: 'github.com/iamalx',
+    },
+    {
+        title: 'My Portfolio ',
+        text: 'Web app build with React',
+        link: 'github.com/iamalx',
+    },
+    
 ]
 
 const Portfolio = () => {
@@ -27,19 +47,26 @@ const Portfolio = () => {
 
     return (
         <div className='error-bar viewport-hg' >
-            {console.log(projects)}
-            {projects.map(elem => (
-                    <Card key={elem.title} style={{ width: '18rem' }}>
-                        <Card.Body>
-                            <Card.Title>{elem.title}</Card.Title>
-                                <Card.Text>
-                                {elem.text}
-                                </Card.Text>
-                            <Card.Link href="#">{elem.link}</Card.Link>
-                        </Card.Body>
-                    </Card>
-                ))
-            }
+            <Container>
+                <Row>
+                   
+                        {projects.map(elem => (
+                            <Col sm={12} md={4} className='mb-3'>
+                                <Card key={elem.title} style={{ width: '100%' }}>
+                                    <Card.Body>
+                                        <Card.Title>{elem.title}</Card.Title>
+                                            <Card.Text>
+                                            {elem.text}
+                                            </Card.Text>
+                                        <Card.Link href="github.com/iamalx">{elem.link}</Card.Link>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                           ))}                  
+                 
+                </Row>
+            </Container>
+
             
         </div>
     );

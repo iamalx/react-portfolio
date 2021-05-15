@@ -5,10 +5,10 @@ import TextField from './input-field';
 import { useEffect, useRef } from 'react';
 
 const schema = yup.object({
-    firstName: yup.string().required('First name required'),
-    lastName: yup.string().required('Last name required'),
-    email: yup.string().email().required('Email required'), 
-    note: yup.string().required('Note required'),
+    Name: yup.string().min(2).required(),
+    Email: yup.string().email().required(), 
+    Subject: yup.string().min(3).required(),
+    Body: yup.string().min(3).required(),
 });
 
 
@@ -27,10 +27,10 @@ const ContactForm = ({ updUser }) => {
     return (
         <Formik
             initialValues = {{
-                firstName: '', 
-                lastName: '',
-                email: '',
-                note: '',
+                Name: '', 
+                Email: '',
+                Subject: '',
+                Body: '',
             }}
             validationSchema={schema}
             onSubmit={(values, { resetForm }) => {
@@ -40,29 +40,29 @@ const ContactForm = ({ updUser }) => {
         >
             {formik => (
                 <div className='cl-width'>
-                    <h1>Sign Up</h1>
+                    <p>Contact me</p>
 
                     <Form className='form-container'>
                         <TextField label='First Name'
                             isdirty={formik.dirty.toString()} 
-                            name='firstName' 
+                            name='Name' 
                             type='text'
                             ref={inputRef}
                         ></TextField>
-                        <TextField label='Last Name' 
-                            isdirty={formik.dirty.toString()}
-                            name='lastName'
-                            type='text'
-                        ></TextField>
                         <TextField label='Email'
                             isdirty={formik.dirty.toString()}
-                            name='email'
+                            name='Email'
                             type='email'
                         ></TextField>
                         <TextField 
-                            label='Note'
+                            label='Subject'
                             isdirty={formik.dirty.toString()}
-                            name='note'
+                            name='Subject'
+                            type='text'
+                        ></TextField>
+                        <TextField label='Body' 
+                            isdirty={formik.dirty.toString()}
+                            name='Body'
                             type='text'
                         ></TextField>
                         
