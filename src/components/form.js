@@ -1,7 +1,7 @@
 import '../App.css';
 import * as yup from 'yup';
 import { Formik, Form } from 'formik';
-import TextField from './text-field';
+import TextField from './input-field';
 import { useEffect, useRef } from 'react';
 
 const schema = yup.object({
@@ -71,7 +71,8 @@ const AddUserForm = ({ updUser }) => {
                         <button className={formik.isValid & formik.dirty ? 'btn': 'btn-disabled'} 
                             type='submit' 
                             disabled={formik.isValid & formik.dirty ? false: true}>
-                        Submit</button> 
+                            Submit
+                        </button> 
 
                     </Form>
                 </div>

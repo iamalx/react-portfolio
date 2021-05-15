@@ -6,14 +6,6 @@ const TextField = forwardRef(({ label, ...props }, ref ) => {
 
     const [ field, meta ] = useField(props)
 
-    // sets focus to firstName input
-    // useEffect(() => {
-    //     if(props.isfocus && props.isdirty) {
-    //         console.log('props: ', props.isfocus)
-    //         textInput.current?.focus()
-    //     }
-    // })
-
     return (
         <div className='form-container '>
             <label htmlFor={field.name} >{label}</label>
