@@ -47,13 +47,13 @@ const Portfolio = () => {
 
     return (
         <div className='error-bar pb-5' >
-            <h2 className='sub-font mb-4 pt-2'>Portfolio</h2>
+            <h2 className='sub-font mb-4 pt-1'>Portfolio</h2>
             <Container>
                 <Row>
                    
                         {projects.map(elem => (
                             <Col sm={12} md={4} className='mb-5'>
-                                <Card key={elem.title} style={{ width: '100%' }}>
+                                <Card key={elem.title} style={{ width: '100%' }} className='card-effects'>
                                     <Card.Body>
                                         <Card.Title>{elem.title}</Card.Title>
                                             <Card.Text>

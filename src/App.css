@@ -33,6 +33,16 @@
   color: snow;
 }
 
+.snow-background {
+  background-color: snow;
+}
+
+.card-effects {
+  box-shadow: 1px 1px 4px lightgrey;
+  /* border: 1px solid rgb(206 206 206 / 13%); */
+}
+
+
 .form-container {
   display: flex;
   flex-direction: column;

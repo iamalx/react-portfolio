@@ -34,7 +34,7 @@ const App = () => {
                     </Row>
                 </Container>
             </div>
-            <div>
+            <div className=''>
                 <Container>
                     <Row>
                         <Col>

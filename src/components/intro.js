@@ -1,16 +1,40 @@
 import '../App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Intro = () => {
 
-    const [ userList, setUserList ] = useState([])
+    const [ h1, setH1 ] = useState(' ')
+    const [ h2, setH2 ] = useState(' ')
+    const [ h2Second, setH2Second ] = useState('')
 
+    const finalString = "Hello World! I'm Alex, an avid software developer"
+
+    useEffect(() => {
+        let index = 0
+        let interval = setInterval(() => {
+
+            if(index <= 12 )
+                setH1(val => setH1(val.concat(finalString.charAt(index))))
+            else if(index <= 22 )
+                setH2(val => setH2(val.concat(finalString.charAt(index))))
+            else 
+                setH2Second(val => setH2Second(val.concat(finalString.charAt(index))))
+        
+            if(index >= finalString.length) {
+                index = 0
+                clearInterval(interval) 
+            }
+        
+            index++
+        }, 100)
     
+    }, []) 
+        
     return (
-        <div className='error-bar white-font vr-center' >
-           <h1 className='h-font white-font'>Hello World!</h1>
-           <p className='main-font'>I'm Alex,</p>
-           <p className='main-font'>an avid software developer</p>
+        <div className='error-bar white-font' >
+           <h1 className='h-font white-font'>{h1? h1:' '}</h1>
+           <p className='main-font'>{h2? h2:' '}</p>
+           <p className='main-font'>{h2Second? h2Second:' '}</p>
         </div>
     );
 }
