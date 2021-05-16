@@ -6,9 +6,26 @@ const AboutMe = () => {
     const [ userList, setUserList ] = useState([])
 
     return (
-        <div className='error-bar viewport-hg ' >
-            <h1 className=''>A little About me:</h1>
-            <p>I'm an Avid Software Developer I'm an Avid Software Developer I'm an Avid Software Developer I'm an Avid Software Developer I'm an Avid Software I'm an Avid Software Developer</p>
+        <div className='error-bar  white-font '>
+            <h2 className='sub-font mb-4 pt-2'>More About Me:</h2>
+            <p>
+                I'm ambitious, creative, innovation-focused, avid programmer,
+                and experienced in high-impact Startups. I have a dual background in
+                business and software development which created the foundation to
+                lead and support technical teams through effective communication
+                to produce high-quality solutions.
+            </p>
+            <p>  
+                I have build apps from scratch, collaborating with designers, marketers,
+                and full-stack engineers to build world-class technology.
+                In addition, I have built web apps, hybrid mobile
+                and smartwatch applications and backends with Javascript frameworks.
+            </p>
+            <p>  
+                I'm passionate about opportunities that improve my skill
+                sets and challenge me, specfically working under experienced and collaborative
+                team members to accomplish the impossible.           
+            </p>
         </div>
     );
 }

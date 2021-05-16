@@ -7,9 +7,10 @@ const Intro = () => {
 
     
     return (
-        <div className='error-bar viewport-hg vr-center ' >
-           <h1 className=''>Hello World!</h1>
-           <p>I'm an Avid Software Developer</p>
+        <div className='error-bar white-font vr-center' >
+           <h1 className='h-font white-font'>Hello World!</h1>
+           <p className='main-font'>I'm Alex,</p>
+           <p className='main-font'>an avid software developer</p>
         </div>
     );
 }

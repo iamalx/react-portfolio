@@ -10,7 +10,7 @@
 }
 
 .viewport-hg {
-  height: 100vh;
+  height: calc(100vh - 40px);
 }
 
 .vr-center {
@@ -26,12 +26,35 @@
 }
 
 .hhhhhh{
-  border: 1px solid green;
+  /* border: 1px solid green; */
+}
+
+.white-font {
+  color: snow;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
+}
+
+.marine-blue {
+  background-color: rgb(0,73,111);  
+}
+
+.h-font {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 50px;
+}
+
+.main-font {
+  font-family: 'Ubuntu Mono', monospace;
+  /* font-size: 10px; */
+}
+
+.sub-font {
+  font-family: 'Montserrat', 	Sans Serif;
+  /* font-size: 10px; */
 }
 
 .btn {
@@ -59,7 +82,7 @@
 }
 
 .error-bar {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .error-text {

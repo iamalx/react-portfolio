@@ -7,8 +7,8 @@ const Stack = () => {
 
     
     return (
-        <div className='error-bar viewport-hg' >
-            
+        <div className='error-bar ' >
+            <h2></h2>
         </div>
     );
 }

@@ -21,31 +21,41 @@ const App = () => {
 
     
     return (
-        <div className=''>
-            <Container>
-                <Row>
-                    <Col>
-                        <Intro />
-                    </Col>
-                    <Col>
-                        <Stack />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Portfolio />   
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <AboutMe />
-                    </Col>
-                    <Col> 
-                        <Contact />
-                    </Col>
-                </Row>
-            </Container>
+        <div>
+            <div className='marine-blue viewport-hg  vr-center'>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Intro />
+                        </Col>
+                        <Col>
+                            <Stack />
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Portfolio />   
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+            <div className='marine-blue viewport-hg  vr-center pt-2'>
+                <Container>
+                    <Row>
+                        <Col>
+                            <AboutMe />
+                        </Col>
+                        <Col> 
+                            <Contact />
+                        </Col>
+                    </Row>
+                </Container>
            
+            </div>
         </div>
     );
 }

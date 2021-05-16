@@ -39,9 +39,8 @@ const ContactForm = ({ updUser }) => {
             }}
         >
             {formik => (
-                <div className='cl-width'>
-                    <p>Contact me</p>
-
+                <div className='cl-width white-font'>
+                    <h2 className='sub-font mb-4 pt-2'>Contact Me</h2>
                     <Form className='form-container'>
                         <TextField label='First Name'
                             isdirty={formik.dirty.toString()} 

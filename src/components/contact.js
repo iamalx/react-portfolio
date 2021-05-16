@@ -9,7 +9,7 @@ const Contact = () => {
     const [ userList, setUserList ] = useState([])
 
     return (
-        <div className='error-bar viewport-hg hr-center'>
+        <div className='error-bar pb-3 hr-center'>
             <ContactForm />
         </div>
     );
