@@ -4,20 +4,22 @@ import { Formik, Form } from 'formik';
 import TextField from './input-field';
 import { useEffect, useRef } from 'react';
 
+import Button from 'react-bootstrap/Button';
+
 const schema = yup.object({
     Name: yup.string().min(2).required(),
     Email: yup.string().email().required(), 
-    Subject: yup.string().min(3).required(),
-    Body: yup.string().min(3).required(),
+    Subject: yup.string().min(2).required(),
+    Body: yup.string().min(2).required(),
 });
 
 
-const ContactForm = ({ updUser }) => {
+const ContactForm = ({ handleSubtmit }) => {
 
     const inputRef = useRef(null)
 
     const saveUser = (data) => {
-        updUser(data)
+        handleSubtmit(data)
     } 
 
     useEffect(() => {
@@ -65,11 +67,11 @@ const ContactForm = ({ updUser }) => {
                             type='text'
                         ></TextField>
                         
-                        <button className={formik.isValid & formik.dirty ? 'btn': 'btn-disabled'} 
+                        <Button variant="light"
                             type='submit' 
-                            disabled={formik.isValid & formik.dirty ? false: true}>
-                            Submit
-                        </button> 
+                            disabled={formik.isValid & formik.dirty ? false: true}
+                            >Light
+                        </Button>
 
                     </Form>
                 </div>

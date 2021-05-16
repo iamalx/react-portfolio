@@ -8,9 +8,13 @@ const Contact = () => {
 
     const [ userList, setUserList ] = useState([])
 
+    const handleSubtmit = (val) => {
+        console.log(val)
+    }  
+
     return (
         <div className='error-bar pb-3 hr-center'>
-            <ContactForm />
+            <ContactForm handleSubtmit={handleSubtmit}/>
         </div>
     );
 }

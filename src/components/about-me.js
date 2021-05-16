@@ -10,7 +10,7 @@ const AboutMe = () => {
             <h2 className='sub-font mb-4 pt-2'>More About Me:</h2>
             <p>
                 I'm ambitious, creative, innovation-focused, avid programmer,
-                and experienced in high-impact Startups. I have a dual background in
+                and experienced in high-impact startups. I have a dual background in
                 business and software development which created the foundation to
                 lead and support technical teams through effective communication
                 to produce high-quality solutions.
@@ -19,12 +19,12 @@ const AboutMe = () => {
                 I have build apps from scratch, collaborating with designers, marketers,
                 and full-stack engineers to build world-class technology.
                 In addition, I have built web apps, hybrid mobile
-                and smartwatch applications and backends with Javascript frameworks.
+                and smartwatch applications with their backends using various frameworks.
             </p>
             <p>  
                 I'm passionate about opportunities that improve my skill
                 sets and challenge me, specfically working under experienced and collaborative
-                team members to accomplish the impossible.           
+                team members, to accomplish the impossible.           
             </p>
         </div>
     );

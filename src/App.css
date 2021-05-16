@@ -35,6 +35,10 @@
 
 .snow-background {
   background-color: snow;
+} 
+
+.intro-mn-hg {
+  min-height: 150px;
 }
 
 .card-effects {

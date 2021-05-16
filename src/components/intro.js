@@ -7,7 +7,7 @@ const Intro = () => {
     const [ h2, setH2 ] = useState(' ')
     const [ h2Second, setH2Second ] = useState('')
 
-    const finalString = "Hello World! I'm Alex, an avid software developer"
+    const finalString = "Hello World! I'm Alex, an avid software developer."
 
     useEffect(() => {
         let index = 0
@@ -31,7 +31,7 @@ const Intro = () => {
     }, []) 
         
     return (
-        <div className='error-bar white-font' >
+        <div className='error-bar white-font intro-mn-hg' >
            <h1 className='h-font white-font'>{h1? h1:' '}</h1>
            <p className='main-font'>{h2? h2:' '}</p>
            <p className='main-font'>{h2Second? h2Second:' '}</p>
