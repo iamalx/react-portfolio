@@ -11,6 +11,7 @@ import Portfolio from './components/portfolio';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Nav from 'react-bootstrap/Nav';
 
 
 
@@ -36,6 +37,19 @@ const App = () => {
     
     return (
         <div>
+            <div className='marine-blue'>
+            <Container>
+                <Nav className="justify-content-end" activeKey="/home">
+                    <Nav.Item>
+                        <Nav.Link className=' white-font' href="/home">Active</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link className=' white-font' eventKey="link-1">Link</Nav.Link>
+                    </Nav.Item>
+                
+                    </Nav>
+            </Container>
+            </div>
             <div className='marine-blue viewport-hg  vr-center'>
             <Container>
                         {isMobile ?

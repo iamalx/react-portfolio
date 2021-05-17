@@ -8,7 +8,7 @@ const Stack = () => {
     
     return (
         <div className='error-bar ' >
-            <h2>hhhh</h2>
+            {/* <h2>hhhh</h2> */}
         </div>
     );
 }
