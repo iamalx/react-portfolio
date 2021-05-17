@@ -18,7 +18,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const App = () => {
 
-    const [ isMobile, setIsMobile ] = useState(false)
+    const [ mobileHg, setMobileHg ] = useState(false)
 
     const portfolioRef = useRef(null)
     const aboutMeRef = useRef(null)
@@ -30,11 +30,7 @@ const App = () => {
     
     //choose the screen size 
     const handleResize = () => {
-        if (window.innerWidth < 720) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
+        setMobileHg(window.innerWidth)
     }
 
     useEffect( _ => {
@@ -74,12 +70,12 @@ const App = () => {
             </div>
             <div className='marine-blue viewport-hg  vr-center'>
             <Container>
-                        {isMobile ?
+                        {mobileHg <= 766 ?
                             <Row>      
-                                <Col sm={12}>
+                                <Col md={12} >
                                     <Intro />
                                 </Col>
-                                <Col sm={12}> 
+                                <Col md={12}> 
                                     <Stack />
                                 </Col>
                             </Row>
@@ -100,14 +96,14 @@ const App = () => {
                 <Container>
                     <Row>
                         <Col>
-                            <Portfolio  />   
+                            <Portfolio />   
                         </Col>
                     </Row>
                 </Container>
             </div>
-            <div className={`marine-blue ${!isMobile && 'viewport-hg'}  vr-center pt-2 `}>
+            <div className={`marine-blue ${mobileHg >= 990 && 'viewport-hg'}  vr-center pt-2 `}>
                 <Container>
-                    {isMobile ?
+                    {mobileHg <= 766  ?
                                 <Row>      
                                     <Col sm={12}>
                                         <div ref={aboutMeRef} >
@@ -116,7 +112,7 @@ const App = () => {
                                     </Col>
                                     <Col sm={12}> 
                                         <div ref={contactRef} >
-                                            <Contact />
+                                            <Contact mobileHg={mobileHg} />
                                         </div>                                        
                                     </Col>
                                 </Row>
@@ -129,7 +125,7 @@ const App = () => {
                                     </Col>
                                     <Col > 
                                         <div ref={contactRef} >
-                                            <Contact />
+                                            <Contact mobileHg={mobileHg}/>
                                         </div>
                                     </Col>
                                 </Row>

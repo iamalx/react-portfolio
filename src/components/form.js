@@ -2,7 +2,7 @@ import '../App.css';
 import * as yup from 'yup';
 import { Formik, Form } from 'formik';
 import TextField from './input-field';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
 
@@ -14,17 +14,13 @@ const schema = yup.object({
 });
 
 
-const ContactForm = ({ handleSubtmit }) => {
+const ContactForm = ({ handleSubtmit, mobileHg }) => {
 
     const inputRef = useRef(null)
-
+    
     const saveUser = (data) => {
         handleSubtmit(data)
     } 
-
-    useEffect(() => {
-    }, [])
-
     // parent component of input 
     return (
         <Formik
@@ -41,7 +37,7 @@ const ContactForm = ({ handleSubtmit }) => {
             }}
         >
             {formik => (
-                <div className='cl-width white-font'>
+                <div className={`white-font  ${mobileHg <= 768 ?  'width-100' : 'cl-width'}`}>
                     <h2 className='sub-font mb-4 pt-2'><u>Contact Me</u></h2>
                     <Form className='form-container'>
                         <TextField label='First Name'

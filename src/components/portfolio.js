@@ -9,33 +9,39 @@ import Col from 'react-bootstrap/Col';
 const projects = [
     {
         title: 'My Portfolio ',
-        text: 'Web app build with React',
-        link: 'github.com/iamalx',
+        text: 'Responsive web app build with React + Bootsrap for a great UX.',
+        link: 'https://github.com/iamalx/react-portfolio',
+        linkName: 'Repo'
     },
     {
-        title: 'My Portfolio ',
-        text: 'Web app build with React',
-        link: 'github.com/iamalx',
+        title: 'Machine Learning',
+        text: 'Engineered data model to predict sales success',
+        link: 'https://github.com/iamalx/machine-learning',
+        linkName: 'Repo'
     },
     {
-        title: 'My Portfolio ',
-        text: 'Web app build with React',
-        link: 'github.com/iamalx',
+        title: 'Data Analytics',
+        text: 'Digital Analytics for Google & Facebook Ads to provide insights.',
+        link: 'https://github.com/iamalx/digital_analytics_python',
+        linkName: 'Repo'
     },
     {
-        title: 'My Portfolio ',
-        text: 'Web app build with React',
-        link: 'github.com/iamalx',
+        title: 'Project Automation',
+        text: 'Asana API script to automate tasks for a smooth project management',
+        link: 'https://github.com/iamalx/asana_api_automation',
+        linkName: 'Repo'
     },
     {
-        title: 'My Portfolio ',
-        text: 'Web app build with React',
-        link: 'github.com/iamalx',
+        title: 'Restful API Backend',
+        text: 'End-points using Node, Express, MongoDb, + to facilitate shopping.',
+        link: 'https://github.com/iamalx/node_app',
+        linkName: 'Repo'
     },
     {
-        title: 'My Portfolio ',
-        text: 'Web app build with React',
-        link: 'github.com/iamalx',
+        title: 'Hybrid App Apprenticeship',
+        text: 'App built with Ionic + Angular to help Veterans.',
+        link: 'https://github.com/iamalx/reboot-frontend',
+        linkName: 'Repo'
     },
     
 ]
@@ -50,21 +56,19 @@ const Portfolio = () => {
             <h2 className='sub-font mb-4 pt-1'><u>Portfolio</u></h2>
             <Container>
                 <Row>
-                   
-                        {projects.map(elem => (
-                            <Col xs={12} sm={6} md={4} className='mb-5'>
-                                <Card key={elem.title} style={{ width: '100%' }} className='card-effects'>
-                                    <Card.Body>
-                                        <Card.Title>{elem.title}</Card.Title>
-                                            <Card.Text>
+                    {projects.map(elem => (
+                        <Col xs={12} sm={6} md={4} className='mb-5'>
+                            <Card key={elem.title} style={{ width: '100%' }} className='card-effects'>
+                                <Card.Body>
+                                    <Card.Title>{elem.title}</Card.Title>
+                                        <Card.Text>
                                             {elem.text}
-                                            </Card.Text>
-                                        <Card.Link href="github.com/iamalx">{elem.link}</Card.Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                           ))}                  
-                 
+                                        </Card.Text>
+                                    <Card.Link target='_blank' href={elem.link}>{elem.linkName}</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    ))}                  
                 </Row>
             </Container>
 
