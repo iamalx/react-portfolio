@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import AboutMe from './components/about-me';
 import Contact from './components/contact';
@@ -20,10 +20,17 @@ const App = () => {
 
     const [ isMobile, setIsMobile ] = useState(false)
 
+    const portfolioRef = useRef(null)
+    const aboutMeRef = useRef(null)
+    const contactRef = useRef(null)
+
+    const handleScroll = (ref) => {
+        ref.current.scrollIntoView() 
+    }
+    
     //choose the screen size 
     const handleResize = () => {
         if (window.innerWidth < 720) {
-            console.log('w', window.innerWidth)
             setIsMobile(true)
         } else {
             setIsMobile(false)
@@ -41,10 +48,25 @@ const App = () => {
             <Container>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
-                        <Nav.Link className=' white-font' href="/home">Active</Nav.Link>
+                        <Nav.Link 
+                            className=' lightgrey-font' 
+                            onClick={() => handleScroll(portfolioRef)}
+                            >Portfolio
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className=' white-font' eventKey="link-1">Link</Nav.Link>
+                        <Nav.Link
+                            className=' lightgrey-font'
+                            onClick={() => handleScroll(aboutMeRef)}
+                            >About Me
+                        </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link 
+                            className=' lightgrey-font'
+                            onClick={() => handleScroll(contactRef)}
+                            >Contact
+                        </Nav.Link>
                     </Nav.Item>
                 
                     </Nav>
@@ -74,11 +96,11 @@ const App = () => {
                         }
                 </Container>
             </div>
-            <div className=''>
+            <div className='' ref={portfolioRef}>
                 <Container>
                     <Row>
                         <Col>
-                            <Portfolio />   
+                            <Portfolio  />   
                         </Col>
                     </Row>
                 </Container>
@@ -88,24 +110,31 @@ const App = () => {
                     {isMobile ?
                                 <Row>      
                                     <Col sm={12}>
-                                        <AboutMe />
+                                        <div ref={aboutMeRef} >
+                                            <AboutMe />
+                                        </div>
                                     </Col>
                                     <Col sm={12}> 
-                                        <Contact />
+                                        <div ref={contactRef} >
+                                            <Contact />
+                                        </div>                                        
                                     </Col>
                                 </Row>
                             :
                                 <Row>  
-                                    <Col >
-                                        <AboutMe />
+                                    <Col > 
+                                        <div ref={aboutMeRef} >
+                                            <AboutMe />
+                                        </div>
                                     </Col>
                                     <Col > 
-                                        <Contact />
+                                        <div ref={contactRef} >
+                                            <Contact />
+                                        </div>
                                     </Col>
                                 </Row>
 
                     }
-                   
                 </Container> 
                 
             </div>

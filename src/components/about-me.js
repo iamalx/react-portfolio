@@ -7,7 +7,7 @@ const AboutMe = () => {
 
     return (
         <div className='error-bar  white-font '>
-            <h2 className='sub-font mb-4 pt-2'>More About Me:</h2>
+            <h2 className='sub-font mb-4 pt-2'><u>More About Me</u></h2>
             <p>
                 I'm ambitious, creative, innovation-focused, avid programmer,
                 and experienced in high-impact startups. I have a dual background in

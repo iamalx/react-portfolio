@@ -47,7 +47,7 @@ const Portfolio = () => {
 
     return (
         <div className='error-bar pb-5' >
-            <h2 className='sub-font mb-4 pt-1'>Portfolio</h2>
+            <h2 className='sub-font mb-4 pt-1'><u>Portfolio</u></h2>
             <Container>
                 <Row>
                    
