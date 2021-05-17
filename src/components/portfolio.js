@@ -52,7 +52,7 @@ const Portfolio = () => {
                 <Row>
                    
                         {projects.map(elem => (
-                            <Col sm={12} md={4} className='mb-5'>
+                            <Col xs={12} sm={6} md={4} className='mb-5'>
                                 <Card key={elem.title} style={{ width: '100%' }} className='card-effects'>
                                     <Card.Body>
                                         <Card.Title>{elem.title}</Card.Title>
