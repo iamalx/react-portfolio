@@ -1,9 +1,9 @@
 import '../App.css';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const AboutMe = () => {
 
-    const [ userList, setUserList ] = useState([])
+    // const [ userList, setUserList ] = useState([])
 
     return (
         <div className='error-bar  white-font '>

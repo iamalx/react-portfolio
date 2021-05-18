@@ -6,6 +6,7 @@ const TextField = forwardRef(({ label, ...props }, ref ) => {
 
     const [ field, meta ] = useField(props)
 
+    // return input box or textarea box
     if(props.name !== 'Body') {
         return (
             <div className='form-container' >

@@ -48,17 +48,14 @@ const projects = [
 
 const Portfolio = () => {
 
-    const [ userList, setUserList ] = useState([])
-
-
     return (
         <div className='error-bar pb-5' >
-            <h2 className='sub-font mb-4 pt-1'><u>Portfolio</u></h2>
+            <h2 className='sub-font mb-4'><u>Portfolio</u></h2>
             <Container>
                 <Row>
                     {projects.map(elem => (
-                        <Col xs={12} sm={6} md={4} className='mb-5'>
-                            <Card key={elem.title} style={{ width: '100%' }} className='card-effects'>
+                        <Col key={elem.title} xs={12} sm={6} md={4} className='mb-5'>
+                            <Card style={{ width: '100%' }} className='card-effects'>
                                 <Card.Body>
                                     <Card.Title>{elem.title}</Card.Title>
                                         <Card.Text>

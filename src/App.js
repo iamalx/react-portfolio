@@ -68,8 +68,8 @@ const App = () => {
                     </Nav>
             </Container>
             </div>
-            <div className='marine-blue viewport-hg  vr-center'>
-            <Container>
+            <div className='marine-blue viewport-hg top-diagonal-wr vr-center'>
+            <Container className='top-diagonal-in'>
                         {mobileHg <= 766 ?
                             <Row>      
                                 <Col md={12} >
@@ -101,8 +101,8 @@ const App = () => {
                     </Row>
                 </Container>
             </div>
-            <div className={`marine-blue ${mobileHg >= 990 && 'viewport-hg'}  vr-center pt-2 `}>
-                <Container>
+            <div className={`marine-blue ${mobileHg >= 990 && 'viewport-hg'}  vr-center top-diagonal-wr  `}>
+                <Container className='top-diagonal-in'>
                     {mobileHg <= 766  ?
                                 <Row>      
                                     <Col sm={12}>
@@ -134,7 +134,7 @@ const App = () => {
                 </Container> 
                 
             </div>
-            <Container>  
+            <Container >  
                 <div>
                     <small> UI built with React & Bootstrap. Deployed with Firebase</small>
                 </div> 

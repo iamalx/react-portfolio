@@ -10,7 +10,7 @@
 }
 
 .viewport-hg {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 62px);
 }
 
 .vr-center {
@@ -39,6 +39,15 @@
 
 .intro-mn-hg {
   min-height: 150px;
+}
+
+.top-diagonal-wr {
+  transform: skewY(1deg);
+  margin-top: -11px
+}
+
+.top-diagonal-in {
+  transform: skewY(-1deg);
 }
 
 .card-effects {

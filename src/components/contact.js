@@ -1,5 +1,5 @@
 import '../App.css';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 import ContactForm from '../components/form';              
 
@@ -7,7 +7,8 @@ console.log(ContactForm)
 const Contact = ( { mobileHg } ) => {
 
     const handleSubtmit = (val) => {
-        console.log(val)
+        // TODO: set up email API
+        // console.log(val)
     }  
     
     return (
